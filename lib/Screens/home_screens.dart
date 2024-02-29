@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:note_app/controllers/notes_controller.dart';
+import 'package:note_app/routes/route_names.dart';
 import 'package:note_app/utils/colors.dart';
 import 'package:note_app/widgets/custom_single_notes.dart';
 
@@ -12,6 +15,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final controller = Get.put(NotesController());
+
     return Scaffold(
       body: Container(
         color: AppColors.backgroundColors,
@@ -56,11 +62,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           ListView.builder(
-                              itemCount: 10,
+                              itemCount: controller.notes.length,
                               shrinkWrap: true,
                               primary: false,
                               itemBuilder: (context, index) {
-                                return const CustomSingleNotes();
+                                return const CustomSingleNotes(
+                                  title: 'Software Developer',
+                                  description: 'Hi there, This is a Text note. this my first note as I have created',
+                                  date: '12.00 AM.',);
                               }),
                         ],
                       ),
@@ -72,6 +81,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: AppColors.primaryColors,
+          onPressed: () {
+            Get.toNamed(RouteNames.noteScreen);
+          },
+          label: const Text('Add notes',
+            style: TextStyle(
+              color: Colors.white
+            ),
+          )),
+
     );
   }
 }

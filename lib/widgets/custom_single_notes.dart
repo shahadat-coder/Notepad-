@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:note_app/utils/colors.dart';
 
 class CustomSingleNotes extends StatelessWidget {
-  const CustomSingleNotes({super.key});
+  const CustomSingleNotes({super.key, required this.title, required this.description, required this.date});
+final String title;
+final String description;
+final String date;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(
+        bottom: 10,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -25,7 +31,7 @@ class CustomSingleNotes extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Software Developer',
+          title,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -35,7 +41,9 @@ class CustomSingleNotes extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Hi there, This is a Text note.',
+              description,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.black.withOpacity(.5),
               ),
@@ -45,7 +53,7 @@ class CustomSingleNotes extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '12.00 AM.',
+                  date,
                   style: TextStyle(
                     color: Colors.black.withOpacity(.5),
                     fontSize: 12,

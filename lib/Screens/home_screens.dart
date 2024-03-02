@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/controllers/notes_controller.dart';
 import 'package:note_app/routes/route_names.dart';
 import 'package:note_app/utils/colors.dart';
@@ -58,22 +59,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 10,
                   ),
                   Expanded(
-                    child: SingleChildScrollView(
+                    child: Obx(() => SingleChildScrollView(
                       child: Column(
                         children: [
+                          controller.notes.isEmpty ? Center(
+                            child: Text('No Notes Available'),
+                          ) :
                           ListView.builder(
                               itemCount: controller.notes.length,
                               shrinkWrap: true,
                               primary: false,
+                              reverse: true,
                               itemBuilder: (context, index) {
-                                return const CustomSingleNotes(
-                                  title: 'Software Developer',
-                                  description: 'Hi there, This is a Text note. this my first note as I have created',
-                                  date: '12.00 AM.',);
+                                return  CustomSingleNotes(
+                                  index: index);
                               }),
                         ],
                       ),
-                    ),
+                    )),
                   ),
                 ],
               ),

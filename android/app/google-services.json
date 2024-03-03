@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094893030866",
+    "project_id": "notepad-4076e",
+    "storage_bucket": "notepad-4076e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094893030866:android:4bab37cfe3cd29ff0c0c0b",
+        "android_client_info": {
+          "package_name": "com.example.note_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0iQsKjeTjvurBUPwlhODI0SM2myxig1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

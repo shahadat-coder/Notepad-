@@ -37,7 +37,7 @@ class _CustomButtonState extends State<CustomButton> {
         child:  Center(
           child: Text(
             widget.title,
-            style:  TextStyle(
+            style:  const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 18,

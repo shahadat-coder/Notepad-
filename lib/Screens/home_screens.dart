@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:note_app/controllers/notes_controller.dart';
 import 'package:note_app/routes/route_names.dart';
 import 'package:note_app/utils/colors.dart';
@@ -62,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Obx(() => SingleChildScrollView(
                       child: Column(
                         children: [
-                          controller.notes.isEmpty ? Center(
+                          controller.notes.isEmpty ? const Center(
                             child: Text('No Notes Available'),
                           ) :
                           ListView.builder(

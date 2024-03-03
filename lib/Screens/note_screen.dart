@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controllers/notes_controller.dart';
@@ -55,13 +53,13 @@ class _NoteScreenState extends State<NoteScreen> {
           children: [
             TextFormField(
               controller: titleController,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
               ),
               minLines: 1,
               maxLines: 2,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Title',
                 border: InputBorder.none,
               ),
@@ -71,7 +69,7 @@ class _NoteScreenState extends State<NoteScreen> {
                 controller: descriptionController,
                 maxLines: 50,
                 minLines: 50,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Describe about your notes',
                 ),
@@ -109,4 +107,3 @@ class _NoteScreenState extends State<NoteScreen> {
     );
   }
 }
-

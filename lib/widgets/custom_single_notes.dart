@@ -40,7 +40,7 @@ final int index;
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            color: Colors.black.withOpacity(.2),
+            color: Colors.black.withOpacity(.1),
           )
         ),
         child: ListTile(
@@ -48,14 +48,14 @@ final int index;
           leading: Container(
             height: 13,
             width: 13,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.backgroundColors,
             ),
           ),
           title: Text(
             note.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
